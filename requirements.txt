@@ -1,0 +1,6 @@
+feedparser
+google-generativeai
+sqlite-utils
+slack_sdk
+requests
+python-dotenv
