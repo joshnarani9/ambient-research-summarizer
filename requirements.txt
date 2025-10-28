@@ -4,3 +4,8 @@ sqlite-utils
 slack_sdk
 requests
 python-dotenv
+requests
+streamlit
+uvicorn
+fastapi
+pydantic
