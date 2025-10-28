@@ -1,9 +1,25 @@
 services:
+  # 🧠 Ambient background summarizer (worker)
   - type: worker
     name: ambient-research-summarizer
     runtime: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python main.py"
+    plan: starter
+    envVars:
+      - key: NEWS_API_KEY
+        sync: false
+      - key: SLACK_WEBHOOK_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+
+  # 🌐 Streamlit Dashboard (web service)
+  - type: web
+    name: ambient-research-dashboard
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run app.py --server.port 10000 --server.address 0.0.0.0"
     plan: starter
     envVars:
       - key: NEWS_API_KEY

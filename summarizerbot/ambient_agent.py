@@ -59,7 +59,7 @@ async def ambient_loop():
         except Exception as e:
             print(f"[AmbientAgent Error] {e}")
 
-        await asyncio.sleep(300)  # sleep for 5 minutes
+        await asyncio.sleep(60)  # sleep for 5 minutes
 
 
 def start_ambient_loop():
